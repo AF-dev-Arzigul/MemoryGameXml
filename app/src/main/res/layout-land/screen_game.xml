@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/forest"
+    android:forceDarkAllowed="false"
+    tools:context=".ui.screens.GameScreen">
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/back"
+        app:layout_constraintEnd_toStartOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/purple_200"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/progressBar"
+        app:layout_constraintEnd_toEndOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="@id/progressBar"
+        app:layout_constraintTop_toTopOf="@id/progressBar" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cardView"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn1"
+        android:fontFamily="@font/f1"
+        android:text="Level 1"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        app:trackThickness="8dp"
+        app:trackCornerRadius="8dp"
+        app:indicatorColor="#FED14A"
+        android:layout_height="10dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/progress_back"
+        android:padding="2dp"
+        android:elevation="10dp"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/text_diamon"
+        app:layout_constraintStart_toEndOf="@id/btn_back"
+        app:layout_constraintTop_toBottomOf="@id/cardView" />
+
+    <ImageView
+        android:id="@+id/ic_diamon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/coins"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_diamon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ic_diamon"
+        app:layout_constraintEnd_toStartOf="@id/ic_diamon"
+        app:layout_constraintTop_toTopOf="@id/ic_diamon"
+        tools:text="0" />
+
+    <RelativeLayout
+        android:id="@+id/containerImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="200dp"
+        android:layout_marginVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_second"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn1"
+        android:fontFamily="@font/f1"
+        android:text="No enough coins"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:clickable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_show_all"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn1"
+        android:fontFamily="@font/f1"
+        android:text="Have a look\n-10 coins"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:translationZ="50dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/cat"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="176dp"
+        android:scaleType="centerCrop"
+        android:paddingTop="37dp"
+        android:src="@drawable/cat_deco"
+        app:layout_constraintBottom_toTopOf="@id/btn_show_all"
+        app:layout_constraintEnd_toEndOf="@id/btn_show_all"
+        app:layout_constraintStart_toStartOf="@id/btn_show_all"
+        app:layout_constraintTop_toBottomOf="@id/text_diamon"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashScreen">
+
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="uz.gita.memorygameYB.ui.screens.SplashScreen"
+        android:label="screen_splash"
+        tools:layout="@layout/screen_splash" >
+        <action
+            android:id="@+id/action_splashScreen_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.gita.memorygameYB.ui.screens.HomeScreen"
+        android:label="HomeScreen"
+        tools:layout="@layout/home_screen">
+        <action
+            android:id="@+id/action_homeScreen_to_levelScreen"
+            app:destination="@id/levelScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_aboutScreen"
+            app:destination="@id/aboutScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameScreen"
+        android:name="uz.gita.memorygameYB.ui.screens.GameScreen"
+        android:label="screen_game"
+        tools:layout="@layout/screen_game" >
+        <action
+            android:id="@+id/action_gameScreen_to_gameWinScreen"
+            app:destination="@id/gameWinScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_gameScreen_to_gameOverScreen"
+            app:destination="@id/gameOverScreen"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="level"
+            app:argType="uz.gita.memorygameYB.data.models.Level" />
+    </fragment>
+    <fragment
+        android:id="@+id/levelScreen"
+        android:name="uz.gita.memorygameYB.ui.screens.LevelScreen"
+        android:label="LevelScreen"
+        tools:layout="@layout/screen_level">
+        <action
+            android:id="@+id/action_levelScreen_to_gameScreen"
+            app:destination="@id/gameScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutScreen"
+        android:name="uz.gita.memorygameYB.ui.screens.AboutScreen"
+        android:label="AboutScreen" />
+    <fragment
+        android:id="@+id/gameOverScreen"
+        android:name="uz.gita.memorygameYB.ui.screens.GameOverScreen"
+        android:label="GameOverScreen" >
+        <action
+            android:id="@+id/action_gameOverScreen_to_gameScreen"
+            app:destination="@id/gameScreen"
+            app:popUpTo="@id/gameScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_gameOverScreen_to_levelScreen"
+            app:destination="@id/levelScreen"
+            app:popUpTo="@id/levelScreen"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="levelToGOS"
+            app:argType="uz.gita.memorygameYB.data.models.Level" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameWinScreen"
+        android:name="uz.gita.memorygameYB.ui.screens.GameWinScreen"
+        android:label="GameWinScreen" >
+        <action
+            android:id="@+id/action_gameWinScreen_to_levelScreen"
+            app:destination="@id/levelScreen"
+            app:popUpTo="@id/levelScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_gameWinScreen_to_gameScreen"
+            app:destination="@id/gameScreen"
+            app:popUpTo="@id/gameScreen"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="levelToGWS"
+            app:argType="uz.gita.memorygameYB.data.models.Level" />
+    </fragment>
+</navigation>

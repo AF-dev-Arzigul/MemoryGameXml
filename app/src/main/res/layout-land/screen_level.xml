@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/forest">
+
+    <ImageView
+        android:id="@+id/ic_diamon"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/coins"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_diamon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ic_diamon"
+        app:layout_constraintEnd_toStartOf="@id/ic_diamon"
+        app:layout_constraintTop_toTopOf="@id/ic_diamon"
+        tools:text="100" />
+
+    <ImageView
+        android:id="@+id/btn_exit"
+        android:layout_width="40dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_easy"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:background="@drawable/btn1"
+        android:fontFamily="@font/f1"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="8dp"
+        android:text="EASY"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_medium"
+        app:layout_constraintEnd_toEndOf="@+id/btn_medium"
+        app:layout_constraintStart_toStartOf="@+id/btn_medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_medium"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/btn1"
+        android:fontFamily="@font/f1"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="8dp"
+        android:text="MEDIUM"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_hard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_easy"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_hard"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:background="@drawable/btn1"
+        android:fontFamily="@font/f1"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="8dp"
+        android:text="HARD"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_medium"
+        app:layout_constraintStart_toStartOf="@+id/btn_medium"
+        app:layout_constraintTop_toBottomOf="@id/btn_medium"
+        tools:ignore="HardcodedText" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/sloth_anim" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
